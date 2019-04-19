@@ -7,23 +7,19 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.Date;
-import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "album")
-public class Album {
+@Table(name = "chapter")
+public class Chapter {
     @Id
-    private Integer id;
+    /*@GeneratedValue(generator="UUID")*/
+    private String id;
     private String title;
-    private Integer amount;
-    private String pic;
-    private String score;
-    private String author;
-    private String boardcast;
+    private String size;
+    private String duration;
     private Date time;
-    private String brief;
-    private List<Chapter> children;
-
+    private Integer albumId;
+    private String path;
 }

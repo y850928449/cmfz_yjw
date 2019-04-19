@@ -41,7 +41,6 @@
                     //带上原数据
                     $("#ff_update").form('load', selectedRow)
                     //alert('帮助按钮')
-
                 }
             }, '-', {
                 iconCls: 'icon-delete',

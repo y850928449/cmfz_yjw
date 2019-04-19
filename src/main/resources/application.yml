@@ -14,5 +14,12 @@ spring:
     view:
       prefix: /
       suffix: .jsp
+  http:
+    encoding:
+      force: true
+      charset: UTF-8
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 200MB
 mybatis:
   type-aliases-package: com.baizhi.entity
