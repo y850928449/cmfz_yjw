@@ -9,4 +9,6 @@ public interface CharpterService {
     public List<Chapter> selectTwo(int id);
 
     public void insert(Chapter chapter, MultipartFile file);
+
+    public List<Chapter> select();
 }

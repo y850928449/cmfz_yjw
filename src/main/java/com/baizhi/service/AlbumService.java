@@ -8,4 +8,6 @@ public interface AlbumService {
     public List<Album> selectAll();
 
     public void insert(Album album);
+
+    public Album selectOne(int id);
 }

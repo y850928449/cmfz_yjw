@@ -29,4 +29,9 @@ public class AlbumServiceImpl implements AlbumService {
         albumDao.insert(album);
     }
 
+    @Override
+    public Album selectOne(int id) {
+        Album album = albumDao.selectByPrimaryKey(id);
+        return album;
+    }
 }

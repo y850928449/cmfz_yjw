@@ -37,12 +37,20 @@ public class BannerServiceImpl implements BannerService {
     }
 
     @Override
-    public void delete(Banner banner) {
-        bannerDao.delete(banner);
+    public Integer delete(Banner banner) {
+        int delete = bannerDao.delete(banner);
+        if (delete == 1) return 1;
+        return 0;
     }
 
     @Override
     public void update(Banner banner) {
         bannerDao.updateByPrimaryKeySelective(banner);
+    }
+
+    @Override
+    public List<Banner> selectxsl() {
+        List<Banner> list = bannerDao.selectAll();
+        return list;
     }
 }

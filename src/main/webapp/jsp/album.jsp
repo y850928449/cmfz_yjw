@@ -27,7 +27,7 @@
             text: '添加章节',
             handler: function () {
                 var row = $("#dg_album").treegrid("getSelected");
-                if (row == null || row.size == null) {
+                if (row == null || row.size != null) {
                     $.messager.alert('提示消息', '请选择一个专辑进行添加');
                     return;
                 }
@@ -57,6 +57,13 @@
                     }
                     $("#music").dialog("open");
                     $("#audio").prop("src", "${pageContext.request.contextPath}" + row.path)
+                }
+            }
+            , '-', {
+                iconCls: 'icon-save',
+                text: '导出表格',
+                handler: function () {
+                    location.href = "${pageContext.request.contextPath}/album/xsl";
                 }
             }];
         /*展示*/
@@ -88,7 +95,7 @@
                 if (data.return) {
                     alert("添加成功");
                     $("#dd_album").dialog("close");
-                    $("#dg_album").datagrid("reload");
+                    $("#dg_album").treegrid("reload");
                 } else {
                     alert("添加失败");
                 }
@@ -262,7 +269,7 @@
 				   noMusic();
 				}
 			}]">
-    <audio src="" id="audio"></audio>
+    <audio src="" id="audio" controls="controls" autoplay="autoplay"></audio>
 
 </div>
 

@@ -55,7 +55,16 @@
                 handler: function () {/*alert('保存按钮')*/
                     $("#dg_banner").edatagrid("saveRow");
                 }
-            }],
+            }
+                , '-', {
+                    iconCls: 'icon-save',
+                    text: '导出表格',
+                    handler: function () {/*alert('保存按钮')*/
+                        $.ajax({
+                            url: "${pageContext.request.contextPath}/banner/xsl"
+                        })
+                    }
+                }],
             view: detailview,
             detailFormatter: function (rowIndex, rowData) {
                 return '<table><tr>' +

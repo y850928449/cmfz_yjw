@@ -100,5 +100,10 @@ public class CharpterServiceImpl implements CharpterService {
                 + seconds + " 秒 ";
     }
 
+    public List<Chapter> select() {
+        List<Chapter> list = chapterDao.selectAll();
+        return list;
+    }
+
 }
 //mvn install:install-file -Dfile=G:\后期项目\项目相关\jave-1.0.2.jar -DgroupId=com.baizhi -DartifactId=jave -Dversion=1.0.2.RELEASE -Dpackaging=jar
